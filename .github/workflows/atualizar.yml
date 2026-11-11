@@ -2,12 +2,29 @@ name: Atualizar cotações
 
 on:
   schedule:
-    # a cada hora, seg-sex, 10h às 18h (horário de Brasília = UTC-3)
-    - cron: "7 13-21 * * 1-5"
+    # verifica a cada 15 min, seg-sex, 10h às 18h (horário de Brasília = UTC-3);
+    # só busca as cotações quando já passou o intervalo escolhido (config.json)
+    - cron: "*/15 13-21 * * 1-5"
   workflow_dispatch:
+    inputs:
+      intervalo:
+        description: "Atualizar a cada"
+        type: choice
+        default: "manter o atual"
+        options:
+          - "manter o atual"
+          - "15 min"
+          - "30 min"
+          - "1 hora"
+          - "2 horas"
+          - "4 horas"
 
 permissions:
   contents: write
+
+concurrency:
+  group: atualizar
+  cancel-in-progress: false
 
 jobs:
   atualizar:
@@ -22,12 +39,26 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - run: python monitor.py
+      - name: Buscar cotações
+        env:
+          ESCOLHA: ${{ inputs.intervalo }}
+          EVENTO: ${{ github.event_name }}
+        run: |
+          case "$ESCOLHA" in
+            "15 min")  ARGS="--intervalo 15" ;;
+            "30 min")  ARGS="--intervalo 30" ;;
+            "1 hora")  ARGS="--intervalo 60" ;;
+            "2 horas") ARGS="--intervalo 120" ;;
+            "4 horas") ARGS="--intervalo 240" ;;
+            *)         ARGS="" ;;
+          esac
+          if [ "$EVENTO" = "schedule" ]; then ARGS="$ARGS --agendado"; fi
+          python monitor.py $ARGS
 
-      - name: Salvar data.json
+      - name: Salvar resultado
         run: |
           git config user.name "fii-bot"
           git config user.email "fii-bot@users.noreply.github.com"
-          git add data.json
+          git add data.json config.json
           git diff --staged --quiet || git commit -m "Atualiza cotações"
           git push

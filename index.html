@@ -43,12 +43,15 @@
   .faixa i { position: absolute; top: -3px; width: 3px; height: 12px;
              background: var(--ink); border-radius: 2px; }
   .erro { color: var(--neg); font-size: .875rem; margin-top: 12px; }
+  #sub { margin-bottom: 0; }
+  #ritmo a { color: var(--pos); }
 </style>
 </head>
 <body>
 <main>
   <h1>Meus FIIs</h1>
   <p class="sub" id="sub">Carregando…</p>
+  <p class="sub" id="ritmo"></p>
   <div class="wrap">
     <table>
       <thead><tr id="cab"></tr></thead>
@@ -123,10 +126,35 @@ document.getElementById("cab").addEventListener("keydown", e => {
   if (th && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); ordenarPor(th.dataset.k); }
 });
 
-fetch("data.json?t=" + Date.now())
+const LINK_INTERVALO =
+  "https://github.com/Wesley-Sal/fii-monitor/actions/workflows/atualizar.yml";
+
+function textoIntervalo(min) {
+  if (min < 60) return min + " min";
+  const h = min / 60;
+  return h === 1 ? "1 hora" : h + " horas";
+}
+
+function mostrarRitmo(dados) {
+  const min = dados.intervalo_min || 60;
+  let txt = "Atualiza a cada " + textoIntervalo(min) + " (seg–sex, 10h–18h)";
+  if (dados.atualizado_ts) {
+    const prox = new Date((dados.atualizado_ts + min * 60) * 1000);
+    txt += " · próxima por volta de " +
+      prox.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit",
+                                         timeZone: "America/Sao_Paulo" });
+  }
+  document.getElementById("ritmo").innerHTML =
+    txt + ` · <a href="${LINK_INTERVALO}" target="_blank" rel="noopener">mudar intervalo</a>`;
+}
+
+function carregar() {
+fetch("data.json?t=" + Date.now(), { cache: "no-store" })
   .then(r => r.json())
   .then(dados => {
     fundos = dados.fundos;
+    mostrarRitmo(dados);
+    document.getElementById("erros").textContent = "";
     document.getElementById("sub").textContent =
       fundos.length ? "Atualizado em " + dados.atualizado_em + " (horário de Brasília)"
                     : "Ainda sem dados. Rode a ação “Atualizar cotações” no GitHub.";
@@ -138,6 +166,10 @@ fetch("data.json?t=" + Date.now())
   .catch(() => {
     document.getElementById("sub").textContent = "Não consegui carregar o data.json.";
   });
+}
+
+carregar();
+setInterval(carregar, 5 * 60 * 1000); // a página busca dados novos a cada 5 min
 </script>
 </body>
 </html>
