@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meus FIIs</title>
+<style>
+  :root {
+    --bg: #eef1ec; --surface: #fafbf8; --ink: #1d2a24; --muted: #5f6f66;
+    --line: #d5dcd4; --pos: #0f6b5c; --neg: #b4412f;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151b18; --surface: #1c2420; --ink: #e6ede8; --muted: #8fa097;
+      --line: #2b3630; --pos: #4cc2a8; --neg: #ef8a76;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 20px 16px 40px;
+    background: var(--bg); color: var(--ink);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  main { max-width: 860px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0; }
+  .sub { color: var(--muted); font-size: .875rem; margin: 2px 0 18px; }
+  .wrap { overflow-x: auto; background: var(--surface);
+          border: 1px solid var(--line); border-radius: 8px; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { padding: 10px 12px; text-align: right; white-space: nowrap;
+           border-bottom: 1px solid var(--line); }
+  th:first-child, td:first-child { text-align: left; }
+  th { font-size: .8rem; font-weight: 600; color: var(--muted);
+       cursor: pointer; user-select: none; }
+  th:focus-visible { outline: 2px solid var(--pos); outline-offset: -2px; }
+  tr:last-child td { border-bottom: 0; }
+  td:first-child { font-weight: 700; }
+  .pos { color: var(--pos); } .neg { color: var(--neg); }
+  .faixa { display: inline-block; width: 64px; height: 6px; border-radius: 3px;
+           background: var(--line); position: relative; vertical-align: middle; }
+  .faixa i { position: absolute; top: -3px; width: 3px; height: 12px;
+             background: var(--ink); border-radius: 2px; }
+  .erro { color: var(--neg); font-size: .875rem; margin-top: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Meus FIIs</h1>
+  <p class="sub" id="sub">Carregando…</p>
+  <div class="wrap">
+    <table>
+      <thead><tr id="cab"></tr></thead>
+      <tbody id="corpo"></tbody>
+    </table>
+  </div>
+  <p class="erro" id="erros"></p>
+</main>
+
+<script>
+const COLUNAS = [
+  { k: "ticker", rotulo: "Fundo" },
+  { k: "preco", rotulo: "Preço", f: v => "R$ " + v.toFixed(2).replace(".", ",") },
+  { k: "dia_pct", rotulo: "Dia", pct: true },
+  { k: "mes_pct", rotulo: "30 dias", pct: true },
+  { k: "dy_12m_pct", rotulo: "DY 12m", f: v => v.toFixed(2).replace(".", ",") + "%" },
+  { k: "ultimo_provento", rotulo: "Último provento",
+    f: v => "R$ " + v.toFixed(2).replace(".", ",") },
+  { k: "faixa", rotulo: "Faixa 52s" },
+];
+
+let fundos = [], ordem = { k: "ticker", asc: true };
+
+const fmtPct = v => (v > 0 ? "+" : "") + v.toFixed(2).replace(".", ",") + "%";
+
+function posicaoNaFaixa(d) {
+  const amp = d.max_52s - d.min_52s;
+  return amp > 0 ? ((d.preco - d.min_52s) / amp) * 100 : 50;
+}
+
+function celula(d, c) {
+  if (c.k === "ticker") return d.ticker;
+  if (c.k === "faixa") {
+    return `<span class="faixa" title="mín R$ ${d.min_52s} · máx R$ ${d.max_52s}">` +
+           `<i style="left:calc(${posicaoNaFaixa(d)}% - 1px)"></i></span>`;
+  }
+  const v = d[c.k];
+  if (v == null) return "—";
+  if (c.pct) return `<span class="${v >= 0 ? "pos" : "neg"}">${fmtPct(v)}</span>`;
+  return c.f(v);
+}
+
+function desenhar() {
+  const { k, asc } = ordem;
+  const valor = d => (k === "faixa" ? posicaoNaFaixa(d) : d[k]);
+  const lista = [...fundos].sort((a, b) => {
+    const x = valor(a), y = valor(b);
+    if (x == null) return 1;
+    if (y == null) return -1;
+    return (x > y ? 1 : x < y ? -1 : 0) * (asc ? 1 : -1);
+  });
+
+  document.getElementById("cab").innerHTML = COLUNAS.map(c =>
+    `<th tabindex="0" data-k="${c.k}">${c.rotulo}` +
+    `${c.k === k ? (asc ? " ▲" : " ▼") : ""}</th>`).join("");
+
+  document.getElementById("corpo").innerHTML = lista.map(d =>
+    "<tr>" + COLUNAS.map(c => `<td>${celula(d, c)}</td>`).join("") + "</tr>").join("");
+}
+
+function ordenarPor(k) {
+  ordem = { k, asc: ordem.k === k ? !ordem.asc : k === "ticker" };
+  desenhar();
+}
+
+document.getElementById("cab").addEventListener("click", e => {
+  const th = e.target.closest("th");
+  if (th) ordenarPor(th.dataset.k);
+});
+document.getElementById("cab").addEventListener("keydown", e => {
+  const th = e.target.closest("th");
+  if (th && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); ordenarPor(th.dataset.k); }
+});
+
+fetch("data.json?t=" + Date.now())
+  .then(r => r.json())
+  .then(dados => {
+    fundos = dados.fundos;
+    document.getElementById("sub").textContent =
+      fundos.length ? "Atualizado em " + dados.atualizado_em + " (horário de Brasília)"
+                    : "Ainda sem dados. Rode a ação “Atualizar cotações” no GitHub.";
+    if (dados.erros.length)
+      document.getElementById("erros").textContent =
+        "Sem dados para: " + dados.erros.map(e => e.ticker).join(", ");
+    desenhar();
+  })
+  .catch(() => {
+    document.getElementById("sub").textContent = "Não consegui carregar o data.json.";
+  });
+</script>
+</body>
+</html>

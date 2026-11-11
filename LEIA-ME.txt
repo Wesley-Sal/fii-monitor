@@ -1,0 +1,18 @@
+MONITOR DE FIIs — USO NO SEU COMPUTADOR
+=======================================
+
+1) Instale o Python (python.org). No Windows, marque "Add Python to PATH".
+
+2) Abra um terminal nesta pasta e instale a dependência (só na primeira vez):
+       pip install -r requirements.txt
+
+3) Inicie o monitor:
+       python iniciar.py
+   (No Windows também dá para dar dois cliques em "iniciar.bat".)
+
+O navegador abre em http://localhost:8000. A página se atualiza sozinha
+de hora em hora, das 10h às 18h, de segunda a sexta, enquanto a janela
+do terminal estiver aberta. Para parar, feche a janela ou aperte Ctrl+C.
+
+Para mudar os fundos, edite a lista TICKERS no arquivo monitor.py.
+Para mudar o horário, edite HORA_INICIO / HORA_FIM em iniciar.py.
