@@ -1,17 +1,17 @@
 {
-  "atualizado_em": "12/11/2026 11:13",
-  "atualizado_ts": 1794492822,
+  "atualizado_em": "12/11/2026 12:16",
+  "atualizado_ts": 1794496571,
   "intervalo_min": 60,
   "fundos": [
     {
       "ticker": "GARE11",
-      "preco": 8.13,
-      "dia_pct": -0.37,
-      "mes_pct": -5.47,
+      "preco": 8.12,
+      "dia_pct": -0.49,
+      "mes_pct": -5.58,
       "min_52s": 7.92,
       "max_52s": 9.24,
       "ultimo_provento": 0.083,
-      "dy_12m_pct": 12.25
+      "dy_12m_pct": 12.27
     },
     {
       "ticker": "FGAA11",
@@ -25,23 +25,23 @@
     },
     {
       "ticker": "RZAG11",
-      "preco": 7.85,
-      "dia_pct": 0.0,
-      "mes_pct": -7.1,
+      "preco": 7.81,
+      "dia_pct": -0.51,
+      "mes_pct": -7.57,
       "min_52s": 7.8,
       "max_52s": 9.53,
       "ultimo_provento": 0.125,
-      "dy_12m_pct": 19.11
+      "dy_12m_pct": 19.21
     },
     {
       "ticker": "CPTS11",
-      "preco": 6.88,
-      "dia_pct": -0.72,
-      "mes_pct": -12.58,
-      "min_52s": 6.86,
+      "preco": 6.83,
+      "dia_pct": -1.44,
+      "mes_pct": -13.21,
+      "min_52s": 6.83,
       "max_52s": 8.17,
       "ultimo_provento": 0.09,
-      "dy_12m_pct": 15.7
+      "dy_12m_pct": 15.81
     },
     {
       "ticker": "SNAG11",
@@ -55,33 +55,33 @@
     },
     {
       "ticker": "SNEL11",
-      "preco": 7.27,
-      "dia_pct": 0.14,
-      "mes_pct": -9.13,
+      "preco": 7.28,
+      "dia_pct": 0.28,
+      "mes_pct": -9.0,
       "min_52s": 7.26,
       "max_52s": 8.83,
       "ultimo_provento": 0.1,
-      "dy_12m_pct": 16.51
+      "dy_12m_pct": 16.48
     },
     {
       "ticker": "TRXF11",
-      "preco": 55.62,
-      "dia_pct": -2.44,
-      "mes_pct": -22.64,
-      "min_52s": 55.62,
+      "preco": 55.46,
+      "dia_pct": -2.72,
+      "mes_pct": -22.87,
+      "min_52s": 55.46,
       "max_52s": 101.27,
       "ultimo_provento": 0.93,
-      "dy_12m_pct": 21.22
+      "dy_12m_pct": 21.28
     },
     {
       "ticker": "BODB11",
-      "preco": 7.1,
-      "dia_pct": 0.42,
-      "mes_pct": -5.84,
+      "preco": 7.08,
+      "dia_pct": 0.14,
+      "mes_pct": -6.1,
       "min_52s": 7.07,
       "max_52s": 8.15,
       "ultimo_provento": 0.09,
-      "dy_12m_pct": 15.92
+      "dy_12m_pct": 15.96
     }
   ],
   "erros": []
