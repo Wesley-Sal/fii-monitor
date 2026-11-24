@@ -1,47 +1,47 @@
 {
-  "atualizado_em": "24/11/2026 13:46",
-  "atualizado_ts": 1795538817,
+  "atualizado_em": "24/11/2026 14:50",
+  "atualizado_ts": 1795542619,
   "intervalo_min": 60,
   "fundos": [
     {
       "ticker": "GARE11",
-      "preco": 7.88,
-      "dia_pct": 0.51,
-      "mes_pct": -9.63,
+      "preco": 7.9,
+      "dia_pct": 0.77,
+      "mes_pct": -9.4,
       "min_52s": 7.84,
       "max_52s": 9.24,
       "ultimo_provento": 0.083,
-      "dy_12m_pct": 12.64
+      "dy_12m_pct": 12.61
     },
     {
       "ticker": "FGAA11",
-      "preco": 7.69,
-      "dia_pct": -0.13,
-      "mes_pct": -5.99,
+      "preco": 7.68,
+      "dia_pct": -0.26,
+      "mes_pct": -6.11,
       "min_52s": 7.6,
       "max_52s": 9.44,
       "ultimo_provento": 0.11,
-      "dy_12m_pct": 17.75
+      "dy_12m_pct": 17.77
     },
     {
       "ticker": "RZAG11",
-      "preco": 7.4,
-      "dia_pct": 2.64,
-      "mes_pct": -15.62,
+      "preco": 7.37,
+      "dia_pct": 2.22,
+      "mes_pct": -15.96,
       "min_52s": 7.21,
       "max_52s": 9.53,
       "ultimo_provento": 0.125,
-      "dy_12m_pct": 20.27
+      "dy_12m_pct": 20.35
     },
     {
       "ticker": "CPTS11",
-      "preco": 6.58,
-      "dia_pct": 0.61,
-      "mes_pct": -14.66,
+      "preco": 6.54,
+      "dia_pct": 0.0,
+      "mes_pct": -15.18,
       "min_52s": 6.54,
       "max_52s": 8.17,
       "ultimo_provento": 0.09,
-      "dy_12m_pct": 16.41
+      "dy_12m_pct": 16.51
     },
     {
       "ticker": "SNAG11",
@@ -55,19 +55,19 @@
     },
     {
       "ticker": "SNEL11",
-      "preco": 7.12,
-      "dia_pct": 1.14,
-      "mes_pct": -10.55,
+      "preco": 7.13,
+      "dia_pct": 1.28,
+      "mes_pct": -10.43,
       "min_52s": 6.79,
       "max_52s": 8.83,
       "ultimo_provento": 0.1,
-      "dy_12m_pct": 16.85
+      "dy_12m_pct": 16.83
     },
     {
       "ticker": "TRXF11",
-      "preco": 53.66,
-      "dia_pct": 1.53,
-      "mes_pct": -25.36,
+      "preco": 53.65,
+      "dia_pct": 1.51,
+      "mes_pct": -25.37,
       "min_52s": 52.85,
       "max_52s": 101.27,
       "ultimo_provento": 0.93,
