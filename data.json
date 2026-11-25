@@ -1,6 +1,6 @@
 {
-  "atualizado_em": "25/11/2026 16:53",
-  "atualizado_ts": 1795636396,
+  "atualizado_em": "25/11/2026 17:52",
+  "atualizado_ts": 1795639944,
   "intervalo_min": 60,
   "fundos": [
     {
@@ -15,13 +15,13 @@
     },
     {
       "ticker": "FGAA11",
-      "preco": 7.74,
-      "dia_pct": 0.52,
-      "mes_pct": -5.38,
+      "preco": 7.64,
+      "dia_pct": -0.78,
+      "mes_pct": -6.6,
       "min_52s": 7.6,
       "max_52s": 9.44,
       "ultimo_provento": 0.11,
-      "dy_12m_pct": 17.64
+      "dy_12m_pct": 17.87
     },
     {
       "ticker": "RZAG11",
@@ -45,29 +45,29 @@
     },
     {
       "ticker": "SNAG11",
-      "preco": 9.36,
-      "dia_pct": 0.11,
-      "mes_pct": -5.07,
+      "preco": 9.34,
+      "dia_pct": -0.11,
+      "mes_pct": -5.27,
       "min_52s": 9.31,
       "max_52s": 11.27,
       "ultimo_provento": 0.12,
-      "dy_12m_pct": 16.77
+      "dy_12m_pct": 16.81
     },
     {
       "ticker": "SNEL11",
-      "preco": 7.27,
-      "dia_pct": 2.54,
-      "mes_pct": -8.67,
+      "preco": 7.28,
+      "dia_pct": 2.68,
+      "mes_pct": -8.54,
       "min_52s": 6.79,
       "max_52s": 8.83,
       "ultimo_provento": 0.1,
-      "dy_12m_pct": 16.51
+      "dy_12m_pct": 16.48
     },
     {
       "ticker": "TRXF11",
-      "preco": 55.96,
-      "dia_pct": 4.0,
-      "mes_pct": -22.17,
+      "preco": 55.95,
+      "dia_pct": 3.98,
+      "mes_pct": -22.18,
       "min_52s": 52.85,
       "max_52s": 101.27,
       "ultimo_provento": 0.93,
@@ -75,13 +75,13 @@
     },
     {
       "ticker": "BODB11",
-      "preco": 7.06,
-      "dia_pct": -0.56,
-      "mes_pct": -10.86,
+      "preco": 7.13,
+      "dia_pct": 0.42,
+      "mes_pct": -9.97,
       "min_52s": 7.03,
       "max_52s": 8.15,
       "ultimo_provento": 0.09,
-      "dy_12m_pct": 16.01
+      "dy_12m_pct": 15.85
     }
   ],
   "erros": []
