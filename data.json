@@ -1,87 +1,87 @@
 {
-  "atualizado_em": "26/11/2026 12:31",
-  "atualizado_ts": 1795707116,
+  "atualizado_em": "26/11/2026 13:47",
+  "atualizado_ts": 1795711663,
   "intervalo_min": 60,
   "fundos": [
     {
       "ticker": "GARE11",
-      "preco": 8.06,
-      "dia_pct": 0.5,
-      "mes_pct": -3.47,
+      "preco": 8.07,
+      "dia_pct": 0.62,
+      "mes_pct": -3.35,
       "min_52s": 7.84,
       "max_52s": 9.24,
       "ultimo_provento": 0.083,
-      "dy_12m_pct": 12.36
+      "dy_12m_pct": 12.34
     },
     {
       "ticker": "FGAA11",
-      "preco": 7.85,
-      "dia_pct": 1.29,
-      "mes_pct": 0.13,
+      "preco": 7.87,
+      "dia_pct": 1.55,
+      "mes_pct": 0.38,
       "min_52s": 7.6,
       "max_52s": 9.44,
       "ultimo_provento": 0.11,
-      "dy_12m_pct": 17.39
+      "dy_12m_pct": 17.34
     },
     {
       "ticker": "RZAG11",
-      "preco": 7.52,
-      "dia_pct": 3.01,
-      "mes_pct": -12.86,
+      "preco": 7.54,
+      "dia_pct": 3.29,
+      "mes_pct": -12.63,
       "min_52s": 7.18,
       "max_52s": 9.53,
       "ultimo_provento": 0.125,
-      "dy_12m_pct": 19.95
+      "dy_12m_pct": 19.89
     },
     {
       "ticker": "CPTS11",
-      "preco": 6.7,
-      "dia_pct": 0.75,
-      "mes_pct": -8.72,
+      "preco": 6.69,
+      "dia_pct": 0.6,
+      "mes_pct": -8.86,
       "min_52s": 6.5,
       "max_52s": 8.17,
       "ultimo_provento": 0.09,
-      "dy_12m_pct": 16.12
+      "dy_12m_pct": 16.14
     },
     {
       "ticker": "SNAG11",
-      "preco": 9.42,
-      "dia_pct": 1.07,
-      "mes_pct": -2.79,
+      "preco": 9.41,
+      "dia_pct": 0.97,
+      "mes_pct": -2.89,
       "min_52s": 9.31,
       "max_52s": 11.27,
       "ultimo_provento": 0.12,
-      "dy_12m_pct": 16.67
+      "dy_12m_pct": 16.68
     },
     {
       "ticker": "SNEL11",
-      "preco": 7.43,
-      "dia_pct": 2.06,
-      "mes_pct": -5.11,
+      "preco": 7.4,
+      "dia_pct": 1.65,
+      "mes_pct": -5.49,
       "min_52s": 6.79,
       "max_52s": 8.83,
       "ultimo_provento": 0.1,
-      "dy_12m_pct": 16.15
+      "dy_12m_pct": 16.22
     },
     {
       "ticker": "TRXF11",
-      "preco": 55.08,
-      "dia_pct": -1.8,
-      "mes_pct": -20.99,
+      "preco": 55.03,
+      "dia_pct": -1.89,
+      "mes_pct": -21.06,
       "min_52s": 52.85,
       "max_52s": 101.27,
       "ultimo_provento": 0.93,
-      "dy_12m_pct": 21.42
+      "dy_12m_pct": 21.44
     },
     {
       "ticker": "BODB11",
-      "preco": 7.12,
-      "dia_pct": -0.14,
-      "mes_pct": -4.81,
+      "preco": 7.09,
+      "dia_pct": -0.56,
+      "mes_pct": -5.21,
       "min_52s": 7.03,
       "max_52s": 8.15,
       "ultimo_provento": 0.09,
-      "dy_12m_pct": 15.87
+      "dy_12m_pct": 15.94
     }
   ],
   "erros": []
