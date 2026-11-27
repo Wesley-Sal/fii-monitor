@@ -1,47 +1,47 @@
 {
-  "atualizado_em": "27/11/2026 14:38",
-  "atualizado_ts": 1795801108,
+  "atualizado_em": "27/11/2026 15:35",
+  "atualizado_ts": 1795804518,
   "intervalo_min": 60,
   "fundos": [
     {
       "ticker": "GARE11",
-      "preco": 8.26,
-      "dia_pct": 1.1,
-      "mes_pct": 0.0,
+      "preco": 8.25,
+      "dia_pct": 0.98,
+      "mes_pct": -0.12,
       "min_52s": 7.84,
       "max_52s": 9.24,
       "ultimo_provento": 0.083,
-      "dy_12m_pct": 12.06
+      "dy_12m_pct": 12.07
     },
     {
       "ticker": "FGAA11",
-      "preco": 7.92,
-      "dia_pct": 0.89,
-      "mes_pct": -0.13,
+      "preco": 7.9,
+      "dia_pct": 0.64,
+      "mes_pct": -0.38,
       "min_52s": 7.6,
       "max_52s": 9.44,
       "ultimo_provento": 0.11,
-      "dy_12m_pct": 17.23
+      "dy_12m_pct": 17.28
     },
     {
       "ticker": "RZAG11",
-      "preco": 7.78,
-      "dia_pct": 2.37,
-      "mes_pct": -8.47,
+      "preco": 7.83,
+      "dia_pct": 3.03,
+      "mes_pct": -7.88,
       "min_52s": 7.18,
       "max_52s": 9.53,
       "ultimo_provento": 0.125,
-      "dy_12m_pct": 19.28
+      "dy_12m_pct": 19.16
     },
     {
       "ticker": "CPTS11",
-      "preco": 6.93,
-      "dia_pct": 2.36,
-      "mes_pct": -3.08,
+      "preco": 6.92,
+      "dia_pct": 2.22,
+      "mes_pct": -3.22,
       "min_52s": 6.5,
       "max_52s": 8.17,
       "ultimo_provento": 0.09,
-      "dy_12m_pct": 15.58
+      "dy_12m_pct": 15.61
     },
     {
       "ticker": "SNAG11",
@@ -55,33 +55,33 @@
     },
     {
       "ticker": "SNEL11",
-      "preco": 7.62,
-      "dia_pct": 1.74,
-      "mes_pct": -2.31,
+      "preco": 7.63,
+      "dia_pct": 1.87,
+      "mes_pct": -2.18,
       "min_52s": 6.79,
       "max_52s": 8.83,
       "ultimo_provento": 0.1,
-      "dy_12m_pct": 15.75
+      "dy_12m_pct": 15.73
     },
     {
       "ticker": "TRXF11",
-      "preco": 56.37,
-      "dia_pct": 3.7,
-      "mes_pct": -18.32,
+      "preco": 56.64,
+      "dia_pct": 4.19,
+      "mes_pct": -17.92,
       "min_52s": 52.85,
       "max_52s": 101.27,
       "ultimo_provento": 0.93,
-      "dy_12m_pct": 20.93
+      "dy_12m_pct": 20.83
     },
     {
       "ticker": "BODB11",
-      "preco": 7.12,
-      "dia_pct": 0.28,
-      "mes_pct": -3.13,
+      "preco": 7.14,
+      "dia_pct": 0.56,
+      "mes_pct": -2.86,
       "min_52s": 7.03,
       "max_52s": 8.15,
       "ultimo_provento": 0.09,
-      "dy_12m_pct": 15.87
+      "dy_12m_pct": 15.83
     }
   ],
   "erros": []
